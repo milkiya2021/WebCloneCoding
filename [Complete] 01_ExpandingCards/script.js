@@ -1,14 +1,14 @@
 const panels = document.querySelectorAll(".panel");
 
-panels.forEach((potato) => {
-  potato.addEventListener("click", () => {
+panels.forEach((item) => {
+  item.addEventListener("click", () => {
     removeActiveClasses();
-    potato.classList.add("active");
+    item.classList.add("active");
   });
 });
 
 function removeActiveClasses() {
-  panels.forEach((potato) => {
-    potato.classList.remove("active");
+  panels.forEach((item) => {
+    item.classList.remove("active");
   });
 }

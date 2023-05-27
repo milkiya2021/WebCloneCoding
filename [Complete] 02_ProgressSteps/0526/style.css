@@ -23,37 +23,22 @@ body {
 .progress-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
-  width: 350px;
   position: relative;
-}
-
-.progress-container::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 99%;
-  height: 5px;
-  background-color: var(--line-border-grey);
-  z-index: -1;
-}
-
-.progress {
-  position: absolute;
-  top: 50%;
-  width: 0%;
-  height: 5px;
-  background-color: var(--line-border-blue);
-  z-index: -1;
-  transition: 0.4s ease;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
 }
 
 .circle {
-  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  background-color: white;
+  color: #999;
   border: 3px solid var(--line-border-grey);
+  border-radius: 50%;
   transition: 0.4s ease;
 }
 
@@ -61,18 +46,48 @@ body {
   border-color: var(--line-border-blue);
 }
 
+.progress-container::before {
+  /*뒤에 흐릿한 진행게이지를 표시한다.*/
+  content: "";
+  background-color: var(--line-border-grey);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /*이거 신기하네! */
+  height: 4px;
+  width: 99%;
+  z-index: -1;
+}
+
+.progress {
+  /*파란 진행게이지를 표시한다 */
+  background-color: var(--line-border-blue);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); /*이거 신기하네! */
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
 .btn {
-  width: 100px;
-  height: 30px;
   background-color: var(--line-border-blue);
   border: none;
-  border-radius: 20px;
   color: white;
+  border-radius: 6px;
+  padding: 8px 30px;
+  margin: 5px;
   cursor: pointer;
 }
 
 .btn:active {
   transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
 }
 
 .btn:disabled {
