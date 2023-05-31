@@ -9,4 +9,26 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  background-color: aquamarine;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  width: 150px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: blueviolet;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 24px;
+}
+
+.btn:active {
+  opacity: 0.8;
 }
