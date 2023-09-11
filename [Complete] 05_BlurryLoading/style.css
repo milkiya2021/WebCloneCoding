@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -7,26 +9,23 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow: hidden;
   margin: 0;
+  overflow: hidden;
 }
 
 .bg {
-  background: url("https://cdn.britannica.com/42/19342-050-1034FC73/Nighthawks-oil-canvas-Edward-Hopper-Art-Institute-1942.jpg")
-    no-repeat center center/cover;
+  background: url("AdwarHopper.jpg") no-repeat center/cover;
   position: absolute;
   top: -30px;
   left: -30px;
   width: calc(100vw + 60px);
   height: calc(100vh + 60px);
   z-index: -1;
-  filter: blur(0px);
+  filter: blur(30px);
 }
 
-.progress {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.loadingText {
   color: white;
-  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  font-size: 50px;
 }
