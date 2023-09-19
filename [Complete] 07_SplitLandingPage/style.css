@@ -1,11 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Roboto&display=swap");
+
 :root {
-  --left-bg-color: rgba(245, 191, 15, 0.7);
-  --right-bg-color: rgba(245, 107, 15, 0.7);
-  --left-btn-hover-color: rgba(245, 191, 15, 1);
-  --right-btn-hover-color: rgba(245, 107, 15, 1);
   --hover-width: 75%;
   --other-width: 25%;
-  --speed: 0.5s;
+  --speed: 1000ms;
 }
 
 * {
@@ -14,14 +12,26 @@
 
 body {
   height: 100vh;
-  overflow: hidden;
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .container {
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+.question.show {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+  font-size: 40px;
+  font-family: "Black Han Sans", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 .split {
@@ -33,8 +43,8 @@ body {
 
 .split.left {
   left: 0;
-  background: url("https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/2238029051/B.jpg?636000000")
-    no-repeat center center/cover;
+  background: url("https://gomean.co.kr/wp-content/uploads/2023/07/gm-black-bean-sauce-noodle.jpg")
+    no-repeat center/cover;
 }
 
 .split.left::before {
@@ -42,13 +52,12 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--left-bg-color);
 }
 
 .split.right {
   right: 0;
-  background: url("https://recipe1.ezmember.co.kr/cache/recipe/2018/06/06/12cbab5b9dbb7d4efaea5bc38b0a75a61.jpg")
-    no-repeat center center/cover;
+  background: url(https://m.cj.co.kr/images/theKitchen/PHON/0000001657/0000006119/0000001657.jpg)
+    no-repeat center/cover;
 }
 
 .split.right::before {
@@ -56,74 +65,82 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--right-bg-color);
 }
 
 .split.right,
 .split.left,
-.split.right::before,
-.split.left::before {
+.split.left::before,
+.split.right::before {
   transition: all var(--speed) ease-in-out;
 }
 
-h1 {
+.title {
   position: absolute;
   top: 30%;
   left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  font-size: 3rem;
+  font-size: 70px;
   color: white;
+  font-family: "Black Han Sans", sans-serif;
+  transform: translateX(-50%);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
 }
 
 .btn {
-  position: absolute;
+  margin-top: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  top: 50%;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
   left: 50%;
+  width: 200px;
+  height: 50px;
   transform: translateX(-50%);
-  border: 1px solid rgb(255, 255, 255);
-  text-decoration: none;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px white solid;
+  background-color: transparent;
   color: white;
-  width: 15rem;
-  padding: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
 }
 
-.left .btn:hover {
-  background-color: var(--left-btn-hover-color);
-  border-color: var(--left-btn-hover-color);
+.split.left .btn:hover {
+  background-color: rgba(20, 14, 1, 0.884);
+  cursor: pointer;
 }
 
-.right .btn:hover {
-  background-color: var(--right-btn-hover-color);
-  border-color: var(--right-btn-hover-color);
+.split.right .btn:hover {
+  background-color: rgba(209, 24, 18, 0.74);
+  cursor: pointer;
 }
 
-.hover-left .left {
+.hoverLeft .left {
   width: var(--hover-width);
 }
 
-.hover-left .right {
+.hoverLeft .right {
   width: var(--other-width);
 }
 
-.hover-right .right {
+.hoverRight .left {
+  width: var(--other-width);
+}
+
+.hoverRight .right {
   width: var(--hover-width);
-}
-
-.hover-right .left {
-  width: var(--other-width);
 }
 
 @media (max-width: 800px) {
-  h1 {
-    font-size: 2rem;
+  .title {
+    font-size: 40px;
   }
 
   .btn {
-    width: 12rem;
-    padding: 1rem;
+    width: 120px;
+    font-size: 13px;
   }
 }
+
+/* 승질나. 선택하지 않은 화면 비활성화는 어떻게 하는거야?*/

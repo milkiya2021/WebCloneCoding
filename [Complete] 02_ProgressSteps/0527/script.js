@@ -1,5 +1,5 @@
-const prev = document.querySelector("#prev");
 const next = document.querySelector("#next");
+const prev = document.querySelector("#prev");
 const circles = document.querySelectorAll(".circle");
 
 let currentPos = 1;
@@ -14,7 +14,7 @@ function paintCircle() {
 
 next.addEventListener("click", paintCircle);
 
-function removeCircle() {
+function eraseCircle() {
   currentPos--;
   if (currentPos < 1) {
     currentPos = 1;
@@ -22,7 +22,7 @@ function removeCircle() {
   update();
 }
 
-prev.addEventListener("click", removeCircle);
+prev.addEventListener("click", eraseCircle);
 
 function update() {
   circles.forEach((circle, idx) => {

@@ -1,8 +1,3 @@
-:root {
-  --line-border-blue: #3498db;
-  --line-border-grey: #e0e0e0;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -11,8 +6,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
-  overflow: hidden;
   margin: 0;
 }
 
@@ -20,21 +15,22 @@ body {
   width: 300px;
 }
 
-.progress-container {
+.progressBar {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin-bottom: 20px;
   position: relative;
 }
 
-.progress-container::before {
+.progressBar::before {
   content: "";
   position: absolute;
   height: 8px;
   top: 50%;
-  left: 0;
   width: 99%;
-  background-color: #c7c9ca;
+  left: 0;
+  background-color: #dfd2d9;
   transform: translateY(-50%);
   z-index: -1;
 }
@@ -43,48 +39,47 @@ body {
   position: absolute;
   width: 0%;
   height: 8px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 40%;
   left: 0;
-  background-color: #3498db;
+  background-color: blueviolet;
   z-index: -1;
-  transition: 0.3s ease-in-out;
+  transition: 0.4s ease;
 }
 
-.circle {
+.num {
   width: 30px;
   height: 30px;
+  border: solid 3px #dfd2d9;
   background-color: white;
-  border: 3px solid #c7c9ca;
-  border-radius: 50px;
-  color: #3498db;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.3s ease-in-out;
+  transition: 0.4s ease;
 }
 
-.circle.active {
-  border: 3px solid #3498db;
+.num.active {
+  color: blueviolet;
+  border: solid 3px blueviolet;
 }
 
 .btns {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   cursor: pointer;
 }
 
 .btn {
-  width: 100px;
-  height: 30px;
-  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 50vw;
+  border: black 1px solid;
+  border-radius: 10px;
+  margin: 20px 10px;
 }
 
-.btn:active {
-  transform: scale(0.98);
-}
-
-.btn:disabled {
+.btn.disabled {
   cursor: not-allowed;
 }

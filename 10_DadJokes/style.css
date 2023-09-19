@@ -9,4 +9,28 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  background-color: rgb(168, 226, 166);
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgb(153, 153, 153);
+}
+
+.btn {
+  height: 50px;
+  width: 200px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(106, 60, 233);
+  color: white;
+  font-size: 18px;
 }

@@ -14,37 +14,37 @@ body {
 
 .search {
   position: relative;
+  height: 50px;
 }
 
 .search .input {
-  transition: width 0.3s ease;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
   border: 0;
-}
-
-.input {
-  width: 30px;
-  height: 30px;
-  border: none;
-}
-
-.input:focus {
-  outline: none;
+  font-size: 18px;
+  transition: width 0.3s ease;
 }
 
 .search.active .input {
   width: 200px;
 }
 
-.btn {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border: none;
+.search .btn {
   background-color: white;
+  height: 50px;
+  width: 50px;
+  font-size: 24px;
+  border: 0;
+  position: absolute;
   top: 0;
   left: 0;
   cursor: pointer;
   transition: transform 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
 }
 
 .search.active .btn {

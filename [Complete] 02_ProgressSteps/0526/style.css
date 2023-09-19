@@ -48,7 +48,7 @@ body {
 
 .progress-container::before {
   /*뒤에 흐릿한 진행게이지를 표시한다.*/
-  content: "";
+  content: "🤗";
   background-color: var(--line-border-grey);
   position: absolute;
   top: 50%;
